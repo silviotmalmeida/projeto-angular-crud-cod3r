@@ -2,7 +2,7 @@
 
 ## Projeto construído durante o curso "Curso Web Moderno Completo com JavaScript 2020 + Projetos" da COD3R.
 
-Trata-se da implementação de um CRUD simples com node.js + angular.js
+Trata-se da implementação de um CRUD simples com Node + Angular.
 
 O projeto encontra-se dockerizado para facilitar a implantação. As orientações para execução estão listadas abaixo:
 
@@ -14,7 +14,7 @@ O projeto encontra-se dockerizado para facilitar a implantação. As orientaçõ
 
 - Para iniciar o frontend utiliza-se o comando "sudo ./startFrontend.sh";
 
-- O sistema de CRUD estará disponível na URL "localhost:420";
+- O sistema de CRUD estará disponível na URL "localhost:4200";
 
 - O webserver com os dados estará disponível na URL "localhost:3001";
 
