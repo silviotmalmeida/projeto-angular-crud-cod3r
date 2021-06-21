@@ -1,5 +1,5 @@
 // entrypoint da aplicação
-// chama o módulo principal da aplicação ./app/app.module.ts
+// carrega o módulo principal da aplicação ./app/app.module.ts
 
 import { enableProdMode } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
