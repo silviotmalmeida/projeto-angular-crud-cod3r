@@ -4,6 +4,7 @@
 import { HeaderService } from "./header.service";
 import { Component, OnInit } from "@angular/core";
 
+// definindo o componente
 @Component({
   // tag do componente
   selector: "app-header",

@@ -1,3 +1,6 @@
+// a função de uma diretiva é alterar a aparência ou comportamento de um elemento
+
+// importando as dependências
 import {
   Directive,
   OnInit,
@@ -6,9 +9,12 @@ import {
   TemplateRef,
 } from "@angular/core";
 
+// definindo a diretiva
 @Directive({
   selector: "[myFor]",
 })
+
+// exportando a diretiva
 export class ForDirective implements OnInit {
   @Input("myForEm") numbers: number[];
 
@@ -19,8 +25,7 @@ export class ForDirective implements OnInit {
 
   ngOnInit(): void {
     for (let number of this.numbers) {
-      this.container.createEmbeddedView(
-        this.template, { $implicit : number });
+      this.container.createEmbeddedView(this.template, { $implicit: number });
     }
   }
 }

@@ -1,12 +1,17 @@
-import { Directive, ElementRef } from '@angular/core';
+// a função de uma diretiva é alterar a aparência ou comportamento de um elemento
 
+// importando as dependências
+import { Directive, ElementRef } from "@angular/core";
+
+// definindo a diretiva
 @Directive({
-  selector: '[appRed]'
+  selector: "[appRed]",
 })
+
+// exportando a diretiva
 export class RedDirective {
-
   constructor(private el: ElementRef) {
-    el.nativeElement.style.color = '#e35e6b'
+    // altera a aparência do elemento para cor vermelha
+    el.nativeElement.style.color = "#e35e6b";
   }
-
 }
