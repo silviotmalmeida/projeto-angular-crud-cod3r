@@ -1,3 +1,4 @@
+// arquivo que contem os imports necessários para o módulo
 // chama o componente principal da aplicação ./app.components.ts
 
 import { BrowserModule } from "@angular/platform-browser";

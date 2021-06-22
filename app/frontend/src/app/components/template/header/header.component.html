@@ -1,9 +1,17 @@
+<!-- estrutura do componente header -->
+
+<!-- usando o toolbar do material -->
 <mat-toolbar class="header mat-elevation-z4">
+
+    <!-- inserindo a logomarca -->
     <span>
         <a routerLink="/">
             <img class="logo" src="assets/img/logo.png" alt="logo">
         </a>
     </span>
+
+    <!-- inserindo o título da página -->
+    <!-- as variáveis icon e title são obtidas dinamicamente através dos métodos do componente -->
     <span class="title-group">
         <a routerLink="{{ routeUrl }}">
             <i class="material-icons">
