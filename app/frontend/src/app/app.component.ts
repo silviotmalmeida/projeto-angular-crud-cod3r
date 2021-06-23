@@ -12,5 +12,5 @@ import { Component } from "@angular/core";
   templateUrl: "app.component.html",
 })
 
-// exportando o componente
+// criando a classe do componente
 export class AppComponent {}

@@ -1,9 +1,10 @@
 // arquivo principal do componente footer
+// pode ser criado pelo comando cli: ng g c pasta/nome-do-componente
 
 // importando as dependências
 import { Component, OnInit } from "@angular/core";
 
-// definindo o componente
+// decorando a classe como um componente
 @Component({
   // tag do componente
   selector: "app-footer",
@@ -15,7 +16,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./footer.component.css"],
 })
 
-// exportando o componente
+// criando a classe do componente
 export class FooterComponent implements OnInit {
   constructor() {}
 

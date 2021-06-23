@@ -1,10 +1,11 @@
 // arquivo principal do componente header
+// pode ser criado pelo comando cli: ng g c pasta/nome-do-componente
 
 // importando as dependências
 import { HeaderService } from "./header.service";
 import { Component, OnInit } from "@angular/core";
 
-// definindo o componente
+// decorando a classe como um componente
 @Component({
   // tag do componente
   selector: "app-header",
@@ -16,7 +17,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./header.component.css"],
 })
 
-// exportando o componente
+// criando a classe do componente
 export class HeaderComponent implements OnInit {
   constructor(private headerService: HeaderService) {}
 
