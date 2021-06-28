@@ -1,21 +1,32 @@
+<!-- estrutura do componente product-create -->
+
+<!-- usando o card do material -->
 <mat-card>
+
+    <!-- inserindo o título da página -->
     <mat-card-title>Novo Produto</mat-card-title>
+
+    <!-- formulário para cadastro do produto -->
     <form>
+
+        <!-- campo nome, responsável pela definição da variável product.name -->
         <mat-form-field>
-            <input matInput placeholder="Nome"
-                [(ngModel)]="product.name" name="name">
+            <input matInput placeholder="Nome" [(ngModel)]="product.name" name="name">
         </mat-form-field>
+
+        <!-- campo preço, responsável pela definição da variável product.price -->
         <mat-form-field>
-            <input matInput placeholder="Preço (R$)"
-                [(ngModel)]="product.price" name="price">
+            <input matInput placeholder="Preço (R$)" [(ngModel)]="product.price" name="price">
         </mat-form-field>
     </form>
+
+    <!-- botão salvar, com evento de click responsável por executar função createProduct() -->
     <button mat-raised-button (click)="createProduct()" color="primary">
         Salvar
     </button>
-    
+
+    <!-- botão cancelar, com evento de click responsável por executar função cancel() -->
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
 </mat-card>
-

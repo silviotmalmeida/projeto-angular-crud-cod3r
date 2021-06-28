@@ -3,15 +3,15 @@
 <!-- usando o toolbar do material -->
 <mat-toolbar class="header mat-elevation-z4">
 
-    <!-- inserindo a logomarca -->
+    <!-- inserindo a logomarca e linkando com a rota / -->
     <span>
         <a routerLink="/">
             <img class="logo" src="assets/img/logo.png" alt="logo">
         </a>
     </span>
 
-    <!-- inserindo o título da página -->
-    <!-- as variáveis icon e title são obtidas dinamicamente através dos métodos do componente -->
+    <!-- inserindo o título da página e linkando com a rota atual do header.service -->
+    <!-- as variáveis routeUrl, icon e title são obtidas dinamicamente através dos métodos do componente -->
     <span class="title-group">
         <a routerLink="{{ routeUrl }}">
             <i class="material-icons">

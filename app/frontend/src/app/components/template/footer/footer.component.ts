@@ -1,4 +1,5 @@
 // arquivo principal do componente footer
+// responsável pela renderização do rodapé do layout
 // pode ser criado pelo comando cli: ng g c pasta/nome-do-componente
 
 // importando as dependências
@@ -18,6 +19,8 @@ import { Component, OnInit } from "@angular/core";
 
 // criando a classe do componente
 export class FooterComponent implements OnInit {
+
+  // definindo o construtor do componente
   constructor() {}
 
   ngOnInit(): void {}

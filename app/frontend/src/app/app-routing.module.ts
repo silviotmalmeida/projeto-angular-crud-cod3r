@@ -1,41 +1,57 @@
 // arquivo de configuração de rotas
 
 // importando as dependências
-import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
-import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
+import { ProductDeleteComponent } from "./components/product/product-delete/product-delete.component";
+import { ProductUpdateComponent } from "./components/product/product-update/product-update.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
+// importando os componentes utilizados
 import { HomeComponent } from "./views/home/home.component";
 import { ProductCrudComponent } from "./views/product-crud/product-crud.component";
-import { ProductCreateComponent } from './components/product/product-create/product-create.component';
+import { ProductCreateComponent } from "./components/product/product-create/product-create.component";
 
 // definindo as rotas
 const routes: Routes = [
   {
+    // rota da página inicial
     path: "",
-    component: HomeComponent
+
+    // componente da página inicial
+    component: HomeComponent,
   },
   {
+    // rota da página de listagem de produtos
     path: "products",
-    component: ProductCrudComponent
+
+    // componente da página de listagem de produtos
+    component: ProductCrudComponent,
   },
   {
+    // rota da página de inclusão de produtos
     path: "products/create",
-    component: ProductCreateComponent
+
+    // componente da página de inclusão de produtos
+    component: ProductCreateComponent,
   },
   {
+    // rota da página de edição de produtos
     path: "products/update/:id",
-    component: ProductUpdateComponent
+
+    // componente da página de edição de produtos
+    component: ProductUpdateComponent,
   },
   {
+    // rota da página de remoção de produtos
     path: "products/delete/:id",
-    component: ProductDeleteComponent
+
+    // componente da página de remoção de produtos
+    component: ProductDeleteComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
