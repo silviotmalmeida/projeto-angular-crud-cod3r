@@ -7,8 +7,9 @@
     <span>
         Desenvolvido com
         <!-- aplicando a diretiva appRed para alterar a cor do ícone para vermelho -->
-        <i class="material-icons v-middle" appRed>
-            favorite
+        <!-- aplicando a diretiva myFor renderizar 3 ícones de coração de acordo com os tipos informados -->
+        <i class="material-icons v-middle" appRed *myFor="let i em ['favorite', 'favorite_border', 'favorite']">
+            {{ i }}
         </i>
         por <strong>Cod<span class="red">3</span>r</strong>
     </span>
