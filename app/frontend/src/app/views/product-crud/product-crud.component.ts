@@ -30,7 +30,7 @@ export class ProductCrudComponent implements OnInit {
   // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {}
 
-  // definindo o método para redirecionamento à página de cadastro de novo produto
+  // método para redirecionamento à página de cadastro de novo produto
   navigateToProductCreate(): void {
     // navegando para a página de inclusão de produtos
     this.router.navigate(["/products/create"]);
