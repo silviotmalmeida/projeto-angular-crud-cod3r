@@ -29,5 +29,6 @@ export class HomeComponent implements OnInit {
     };
   }
 
+  // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {}
 }

@@ -13,9 +13,13 @@ import { Router } from "@angular/router";
   templateUrl: "./product-crud.component.html",
   styleUrls: ["./product-crud.component.css"],
 })
+
+// criando a classe do componente
 export class ProductCrudComponent implements OnInit {
   // definindo o construtor do componente
+  // recebe as rotas e o service do header
   constructor(private router: Router, private headerService: HeaderService) {
+    // atualizando as variáveis do service do header
     headerService.headerData = {
       title: "Cadastro de Produtos",
       icon: "storefront",
@@ -23,6 +27,7 @@ export class ProductCrudComponent implements OnInit {
     };
   }
 
+  // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {}
 
   // definindo o método para redirecionamento à página de cadastro de novo produto

@@ -21,21 +21,23 @@ import { Component, OnInit } from "@angular/core";
 // criando a classe do componente
 export class HeaderComponent implements OnInit {
   // definindo o construtor do componente
+  // recebe o service do header
   constructor(private headerService: HeaderService) {}
 
+  // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {}
 
-  // função responsável por retornar o título da tela atual
+  // função responsável por retornar o título do header atual
   get title(): string {
     return this.headerService.headerData.title;
   }
 
-  // função responsável por retornar o ícone a ser usado no título da tela atual
+  // função responsável por retornar o ícone do header atual
   get icon(): string {
     return this.headerService.headerData.icon;
   }
 
-  // função responsável por retornar a rota atual
+  // função responsável por retornar a rota do header atual
   get routeUrl(): string {
     return this.headerService.headerData.routeUrl;
   }

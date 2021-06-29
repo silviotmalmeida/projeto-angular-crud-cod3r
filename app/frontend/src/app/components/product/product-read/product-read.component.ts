@@ -14,6 +14,7 @@ export class ProductReadComponent implements OnInit {
   
   constructor(private productService: ProductService) { }
 
+  // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {
     this.productService.read().subscribe(products => {
       this.products = products

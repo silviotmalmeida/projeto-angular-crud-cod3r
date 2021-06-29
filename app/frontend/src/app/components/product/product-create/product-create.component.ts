@@ -32,8 +32,10 @@ export class ProductCreateComponent implements OnInit {
   };
 
   // definindo o construtor do componente
+  // recebe as rotas e o service do product
   constructor(private productService: ProductService, private router: Router) {}
 
+  // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {}
 
   // definindo o método para inclusão de novo produto no banco

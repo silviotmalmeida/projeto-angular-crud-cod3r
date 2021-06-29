@@ -22,5 +22,6 @@ export class NavComponent implements OnInit {
   // definindo o construtor do componente
   constructor() {}
 
+  // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {}
 }
