@@ -44,11 +44,11 @@ export class ProductService {
   }
 
   // método para inclusão de um novo produto no BD
-  // recebe um objeto de modelo Produto
+  // recebe um objeto de modelo Produto e retorna um Observable
   create(product: Product): Observable<Product> {
     // executando a requisição http
     return this.http.post<Product>(this.baseUrl, product).pipe(
-      // retorna o Produto incluído
+      // em caso de sucesso, retorna o Produto incluído
       map((obj) => obj),
 
       // caso ocorra uma exceção, chama o errorHandler
@@ -57,9 +57,14 @@ export class ProductService {
   }
 
   // método para consultar todos os registros do BD
+  // retorna um Observable
   read(): Observable<Product[]> {
+    // executando a requisição http
     return this.http.get<Product[]>(this.baseUrl).pipe(
+      // em caso de sucesso, retorna o array de Produtos
       map((obj) => obj),
+
+      // caso ocorra uma exceção, chama o errorHandler
       catchError((e) => this.errorHandler(e))
     );
   }
@@ -92,6 +97,7 @@ export class ProductService {
   }
 
   // método para tratamento de erros
+  // recebe um evento de erro e retorna um Observable
   errorHandler(e: any): Observable<any> {
     // exibe a mensagem de erro
     this.showMessage("Ocorreu um erro!", true);

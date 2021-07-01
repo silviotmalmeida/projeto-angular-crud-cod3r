@@ -1,5 +1,5 @@
-// arquivo principal do componente home
-// responsável pela renderização do crud completo de produtos
+// arquivo principal do componente product-crud
+// responsável pela implementação do crud completo de produtos a partir da composição dos demais componentes de produtos
 // pode ser criado pelo comando cli: ng g c pasta/nome-do-componente
 
 // importando as dependências

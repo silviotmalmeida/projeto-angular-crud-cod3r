@@ -1,15 +1,17 @@
+/* estilo do componente product-read */
+
 table {
-    width: 100%;
+  width: 100%;
 }
 
 .edit {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .edit > i {
-    color: #d9cd26;
+  color: #d9cd26;
 }
 
 .delete > i {
-    color: #e35e6b;
+  color: #e35e6b;
 }

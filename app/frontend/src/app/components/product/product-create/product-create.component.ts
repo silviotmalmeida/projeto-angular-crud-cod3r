@@ -40,11 +40,11 @@ export class ProductCreateComponent implements OnInit {
 
   // definindo o método para inclusão de novo produto no banco
   createProduct(): void {
-    // incluindo um novo produto no BD e retornando os dados
-    this.productService.create(this.product).subscribe((obj) => {
-      // após o callback:
+    // incluindo um novo produto no BD e aguardando resposta do Observable
+    this.productService.create(this.product).subscribe((newProduct) => {
+      // após o callback de sucesso:
       // exibe a mensagem de produto criado na tela
-      this.productService.showMessage("Produto " + obj.name + " incluído!");
+      this.productService.showMessage("Produto " + newProduct.name + " incluído com sucesso!");
 
       // navega para a página da lista de produtos
       this.router.navigate(["/products"]);
