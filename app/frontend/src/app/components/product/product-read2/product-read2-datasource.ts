@@ -1,3 +1,8 @@
+// arquivo de datasouce do componente product-read2
+// responsável pela gestão dos dados a serem exibidos pelo componente
+// criado através do comando cli: ng generate @angular/material:table pasta/nome-do-componente
+
+// importando as dependências
 import { Product } from "./../product.model";
 import { DataSource } from "@angular/cdk/collections";
 import { MatPaginator } from "@angular/material/paginator";
@@ -6,28 +11,34 @@ import { map } from "rxjs/operators";
 import { Observable, of as observableOf, merge } from "rxjs";
 import { ProductService } from "./../product.service";
 
-
 /**
  * Data source for the ProductRead2 view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
+
+// criando a classe do datasource
 export class ProductRead2DataSource extends DataSource<Product> {
-  // data: Product[] = EXAMPLE_DATA;
+  // definindo o modelo dos dados e o estado inicial
   data: Product[];
+
+  // definindo o paginador
   paginator: MatPaginator;
+
+  // definindo o ordenador
   sort: MatSort;
 
+  // definindo o construtor do componente
+  // recebe o service do product
   constructor(private productService: ProductService) {
     super();
 
+    // carregando os dados
     this.loadData();
   }
 
-  // método que será executado imediatamente após a criação do objeto
+  // método carregar os dados com os produtos do BD
   loadData() {
-    // this.dataSource = new ProductRead2DataSource();
-
     // lendo os registros de produtos no BD e aguardando resposta do Observable
     this.productService.read().subscribe((products) => {
       // após o callback de sucesso:
@@ -89,7 +100,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
         case "id":
           return compare(+a.id, +b.id, isAsc);
         case "price":
-            return compare(+a.price, +b.price, isAsc);
+          return compare(+a.price, +b.price, isAsc);
         default:
           return 0;
       }

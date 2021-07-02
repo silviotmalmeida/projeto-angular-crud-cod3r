@@ -22,7 +22,7 @@ import { Router } from "@angular/router";
 
 // criando a classe do componente
 export class ProductCreateComponent implements OnInit {
-  // definindo o estado inicial do objeto Produto
+  // definindo o modelo e estado inicial do objeto Produto
   product: Product = {
     // nome do produto
     name: "",
@@ -44,7 +44,9 @@ export class ProductCreateComponent implements OnInit {
     this.productService.create(this.product).subscribe((newProduct) => {
       // após o callback de sucesso:
       // exibe a mensagem de produto criado na tela
-      this.productService.showMessage("Produto " + newProduct.name + " incluído com sucesso!");
+      this.productService.showMessage(
+        "Produto " + newProduct.name + " incluído com sucesso!"
+      );
 
       // navega para a página da lista de produtos
       this.router.navigate(["/products"]);

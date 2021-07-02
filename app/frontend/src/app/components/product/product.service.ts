@@ -70,28 +70,49 @@ export class ProductService {
   }
 
   // método para consultar um registro do BD filtrado por id
+  // retorna um Observable
   readById(id: number): Observable<Product> {
+    // definindo a url
     const url = `${this.baseUrl}/${id}`;
+
+    // executando a requisição http
     return this.http.get<Product>(url).pipe(
+      // em caso de sucesso, retorna o Produto
       map((obj) => obj),
+
+      // caso ocorra uma exceção, chama o errorHandler
       catchError((e) => this.errorHandler(e))
     );
   }
 
   // método para atualização de um produto no BD
+  // retorna um Observable
   update(product: Product): Observable<Product> {
+    // definindo a url
     const url = `${this.baseUrl}/${product.id}`;
+
+    // executando a requisição http
     return this.http.put<Product>(url, product).pipe(
+      // em caso de sucesso, retorna o Produto
       map((obj) => obj),
+
+      // caso ocorra uma exceção, chama o errorHandler
       catchError((e) => this.errorHandler(e))
     );
   }
 
   // método para remoção de um produto no BD
+  // retorna um Observable
   delete(id: number): Observable<Product> {
+    // definindo a url
     const url = `${this.baseUrl}/${id}`;
+
+    // executando a requisição http
     return this.http.delete<Product>(url).pipe(
+      // em caso de sucesso, retorna o Produto
       map((obj) => obj),
+
+      // caso ocorra uma exceção, chama o errorHandler
       catchError((e) => this.errorHandler(e))
     );
   }
