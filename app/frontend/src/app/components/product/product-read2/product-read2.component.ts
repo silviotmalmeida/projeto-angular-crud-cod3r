@@ -1,14 +1,17 @@
-import { Product } from './../product.model';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
-import { ProductRead2DataSource } from './product-read2-datasource';
+// criado através do comando cli: ng generate @angular/material:table pasta/nome-do-componente
+// utilizado somente como exemplo
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
+import { MatTable } from "@angular/material/table";
+import { Product } from "./../product.model";
+import { ProductService } from "./../product.service";
+import { ProductRead2DataSource } from "./product-read2-datasource";
 
 @Component({
-  selector: 'app-product-read2',
-  templateUrl: './product-read2.component.html',
-  styleUrls: ['./product-read2.component.css']
+  selector: "app-product-read2",
+  templateUrl: "./product-read2.component.html",
+  styleUrls: ["./product-read2.component.css"],
 })
 export class ProductRead2Component implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -16,12 +19,14 @@ export class ProductRead2Component implements AfterViewInit, OnInit {
   @ViewChild(MatTable) table: MatTable<Product>;
   dataSource: ProductRead2DataSource;
 
+  constructor(private productService: ProductService) {}
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'price'];
+  displayedColumns = ["id", "name", "price", "action"];
 
   // método que será executado imediatamente após a criação do objeto
   ngOnInit() {
-    this.dataSource = new ProductRead2DataSource();
+    this.dataSource = new ProductRead2DataSource(this.productService);
   }
 
   ngAfterViewInit() {
