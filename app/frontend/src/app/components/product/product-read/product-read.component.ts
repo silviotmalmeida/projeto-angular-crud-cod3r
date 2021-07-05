@@ -21,7 +21,7 @@ import { Component, OnInit } from "@angular/core";
 
 // criando a classe do componente
 export class ProductReadComponent implements OnInit {
-  // definindo o estado inicial do array de produtos
+  // definindo o tipo do array de produtos
   products: Product[];
 
   // definindo o array de colunas a serem exibidas na tabela

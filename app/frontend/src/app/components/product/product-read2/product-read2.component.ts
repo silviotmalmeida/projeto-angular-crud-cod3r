@@ -7,6 +7,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTable } from "@angular/material/table";
+import { __await } from "tslib";
 import { Product } from "./../product.model";
 import { ProductService } from "./../product.service";
 import { ProductRead2DataSource } from "./product-read2-datasource";
@@ -24,7 +25,7 @@ import { ProductRead2DataSource } from "./product-read2-datasource";
 })
 
 // criando a classe do componente
-export class ProductRead2Component implements AfterViewInit, OnInit {
+export class ProductRead2Component implements OnInit {
   // configurações de paginação e ordenação provenientes do table schematics
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -42,21 +43,21 @@ export class ProductRead2Component implements AfterViewInit, OnInit {
   displayedColumns = ["id", "name", "price", "action"];
 
   // método que será executado imediatamente após a criação do objeto
-  ngOnInit() {
-    // populando o datasource a partir do product service
-    this.dataSource = new ProductRead2DataSource(this.productService);
-  }
+  ngOnInit(): void {
+    // lendo os registros de produtos no BD e aguardando resposta do Observable
+    this.productService.read().subscribe((products) => {
+      // após o callback de sucesso:
+      // criando o datasource a partir do array de produtos
+      this.dataSource = new ProductRead2DataSource(products);
 
-  // método que será executado imediatamente após a inicialização da view
-  ngAfterViewInit() {
+      // aplicando a ordenação
+      this.dataSource.sort = this.sort;
 
-    // aplicando a ordenação
-    this.dataSource.sort = this.sort;
+      // aplicando a paginação
+      this.dataSource.paginator = this.paginator;
 
-    // aplicando a paginação
-    this.dataSource.paginator = this.paginator;
-
-    // aplicando os dados na tabela
-    this.table.dataSource = this.dataSource;
+      // aplicando os dados na tabela
+      this.table.dataSource = this.dataSource;
+    });
   }
 }

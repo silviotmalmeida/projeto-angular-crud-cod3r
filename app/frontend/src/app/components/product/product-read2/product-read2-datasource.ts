@@ -30,21 +30,11 @@ export class ProductRead2DataSource extends DataSource<Product> {
 
   // definindo o construtor do componente
   // recebe o service do product
-  constructor(private productService: ProductService) {
+  constructor(products: Product[]) {
     super();
 
     // carregando os dados
-    this.loadData();
-  }
-
-  // método carregar os dados com os produtos do BD
-  loadData() {
-    // lendo os registros de produtos no BD e aguardando resposta do Observable
-    this.productService.read().subscribe((products) => {
-      // após o callback de sucesso:
-      // popula o array de produtos
-      this.data = products;
-    });
+    this.data = products;
   }
 
   /**

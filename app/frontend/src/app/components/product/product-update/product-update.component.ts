@@ -22,8 +22,8 @@ import { Component, OnInit } from "@angular/core";
 
 // criando a classe do componente
 export class ProductUpdateComponent implements OnInit {
-  // definindo o modelo do objeto Produto
-  product: Product;
+  // definindo o modelo e o valor inicial do objeto Produto
+  product: Product = { id: null, name: null, price: null };
 
   // definindo o construtor do componente
   // recebe as rotas e o service do product
@@ -35,20 +35,33 @@ export class ProductUpdateComponent implements OnInit {
 
   // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {
+    // obtendo o id do produto através da URI
     const id = +this.route.snapshot.paramMap.get("id");
+
+    // lendo o registro do produto no BD e aguardando resposta do Observable
     this.productService.readById(id).subscribe((product) => {
+      // após o callback de sucesso:
+      // popula os dados do produto
       this.product = product;
     });
   }
 
+  // método que atualiza o registro do produto
   updateProduct(): void {
+    // atualizando o registro do produto no BD e aguardando resposta do Observable
     this.productService.update(this.product).subscribe(() => {
-      this.productService.showMessage("Produto atualizado com sucesso!");
+      // exibe a mensagem de produto criado na tela
+      this.productService.showMessage(
+        "Produto " + this.product.name + " atualizado com sucesso!"
+      );
+      // navega para a página da lista de produtos
       this.router.navigate(["/products"]);
     });
   }
 
+  // definindo o método para cancelar a atualização do produto
   cancel(): void {
+    // navegando para a página da lista de produtos
     this.router.navigate(["/products"]);
   }
 }
