@@ -36,7 +36,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
     // carregando os dados
     this.data = products;
   }
-
+ 
   /**
    * Connect this data source to the table. The table will only update when
    * the returned stream emits new items.

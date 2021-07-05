@@ -1,19 +1,32 @@
+<!-- estrutura do componente product-delete -->
+
+<!-- usando o card do material -->
 <mat-card>
+
+    <!-- inserindo o título da página -->
     <mat-card-title>Excluir Produto</mat-card-title>
+
+    <!-- formulário para exclusão do produto -->
     <form>
+
+        <!-- usando o form do material -->
+        <!-- campo nome, responsável pela definição da variável product.name -->
         <mat-form-field>
-            <input matInput placeholder="Nome"
-                [value]="product.name" name="name" disabled>
+            <input matInput placeholder="Nome" [value]="product.name" name="name" disabled>
         </mat-form-field>
+
+        <!-- campo preço, responsável pela definição da variável product.price -->
         <mat-form-field>
-            <input matInput placeholder="Preço (R$)"
-                [value]="product.price" name="price" disabled>
+            <input matInput placeholder="Preço (R$)" [value]="product.price" name="price" disabled>
         </mat-form-field>
     </form>
+
+    <!-- botão excluir, com evento de click responsável por executar função deleteProduct() -->
     <button mat-raised-button (click)="deleteProduct()" color="warn">
         Excluir
     </button>
-    
+
+    <!-- botão cancelar, com evento de click responsável por executar função cancel() -->
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>

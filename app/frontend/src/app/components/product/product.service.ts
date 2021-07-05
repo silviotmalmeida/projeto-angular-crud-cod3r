@@ -101,7 +101,7 @@ export class ProductService {
     );
   }
 
-  // método para remoção de um produto no BD
+  // método para exclusão de um produto no BD
   // retorna um Observable
   delete(id: number): Observable<Product> {
     // definindo a url

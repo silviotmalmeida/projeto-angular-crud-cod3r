@@ -35,17 +35,17 @@ const routes: Routes = [
     component: ProductCreateComponent,
   },
   {
-    // rota da página de edição de produtos
+    // rota da página de atualização de produtos
     path: "products/update/:id",
 
-    // componente da página de edição de produtos
+    // componente da página de atualização de produtos
     component: ProductUpdateComponent,
   },
   {
-    // rota da página de remoção de produtos
+    // rota da página de exclusão de produtos
     path: "products/delete/:id",
 
-    // componente da página de remoção de produtos
+    // componente da página de exclusão de produtos
     component: ProductDeleteComponent,
   },
 ];

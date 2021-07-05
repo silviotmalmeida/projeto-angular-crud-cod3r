@@ -26,7 +26,7 @@ export class ProductUpdateComponent implements OnInit {
   product: Product = { id: null, name: null, price: null };
 
   // definindo o construtor do componente
-  // recebe as rotas e o service do product
+  // recebe as rotas, a rota atual  e o service do product
   constructor(
     private productService: ProductService,
     private router: Router,
@@ -35,7 +35,7 @@ export class ProductUpdateComponent implements OnInit {
 
   // método que será executado imediatamente após a criação do objeto
   ngOnInit(): void {
-    // obtendo o id do produto através da URI
+    // obtendo o id do produto através da URI e convertendo para number
     const id = +this.route.snapshot.paramMap.get("id");
 
     // lendo o registro do produto no BD e aguardando resposta do Observable
@@ -50,6 +50,7 @@ export class ProductUpdateComponent implements OnInit {
   updateProduct(): void {
     // atualizando o registro do produto no BD e aguardando resposta do Observable
     this.productService.update(this.product).subscribe(() => {
+      // após o callback de sucesso:
       // exibe a mensagem de produto criado na tela
       this.productService.showMessage(
         "Produto " + this.product.name + " atualizado com sucesso!"

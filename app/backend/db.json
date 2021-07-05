@@ -13,7 +13,7 @@
     {
       "id": 3,
       "name": "Samsung S20+ Ultra",
-      "price": "7520.89"
+      "price": "7520.99"
     },
     {
       "id": 4,
@@ -41,9 +41,19 @@
       "id": 12
     },
     {
-      "name": "teste02",
-      "price": "20",
+      "name": "teste9",
+      "price": "90",
       "id": 13
+    },
+    {
+      "name": "teste10",
+      "price": "100",
+      "id": 14
+    },
+    {
+      "name": "teste11",
+      "price": "110",
+      "id": 15
     }
   ]
 }
